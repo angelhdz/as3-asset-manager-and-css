@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "swf",
+            "request": "launch",
+            "name": "Launch SWF",
+            "preLaunchTask": "Compile debug",
+            "profile": "mobileDevice",
+            "internalConsoleOptions": "openOnSessionStart",
+
+            // configuration settings for simulating devices:
+            // https://github.com/BowlerHatLLC/vscode-as3mxml/wiki/launch.json-configuration-settings-for-simulating-common-mobile-devices-in-Adobe-AIR
+            "screenDPI": 326,
+            "versionPlatform": "AND"
+        },
+        {
+            "type": "swf",
+            "request": "attach",
+            "name": "Attach SWF"
+        }
+    ]
+}

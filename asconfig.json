@@ -1,0 +1,46 @@
+{
+    "config": "airmobile",
+    "compilerOptions": {
+        "output": "bin/MyApp.swf"
+        //"external-library-path": ["path/to/native_extensions"] //use for ANE
+    },
+    "application": "src/MyApp-app.xml",
+    
+    "files": [
+        "src/MyApp.as"
+    ]
+
+    
+    /* packaging options below */
+    ,
+    "airOptions": {
+        "android": {
+            //"target": "", //apk-captive-runtime|apk|apk-debug|apk-profile
+            "output": "bin/MyApp.apk",
+            "signingOptions": {
+                "storetype": "pkcs12",
+                "keystore": "android_certificate.p12" // We'll be asked for the password during packaging proccess
+            }
+            //"extdir": ["path/to/native_extensions"] //use for ANE
+        },
+        "ios": {
+            //"target": "ipa", // ipa-app-store|ipa-ad-hoc|ipa-debug|ipa-test|ipa-debug-interpreter|ipa-test-interpreter
+            "output": "bin/MyApp.ipa",
+            "signingOptions": {
+                "storetype": "pkcs12",
+                "keystore": "ios_certificate.p12", // We'll be asked for the password during packaging proccess
+                "provisioning-profile": "example.mobileprovision"
+            }
+            //"extdir": ["path/to/native_extensions"] //use for ANE
+        }
+
+        /* we may have some files (and folders) to add to the package, including icons and other assets */
+        ,
+        "files": [
+            {
+                "file": "icons",
+                "path": "icons"
+            }
+        ]
+    }
+}
